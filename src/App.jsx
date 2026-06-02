@@ -137,6 +137,14 @@ export default function App() {
 
   const [notification, setNotification] = useState(null);
   const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
+  const [activeWhyCard, setActiveWhyCard] = useState(0);
+
+  const whyFeatures = [
+    { img: '/images/carousel_stock_1780437420971.png', title: 'Stock Permanente', desc: 'Más de 8,000 referencias disponibles en bodega. Despacho inmediato para sus urgencias de obra.' },
+    { img: '/images/carousel_asesoria_1780437432777.png', title: 'Asesoría Técnica', desc: 'Equipo de ingenieros especializados en selección de materiales, dimensionamiento y normativas.' },
+    { img: '/images/carousel_logistica_1780437443504.png', title: 'Logística Nacional', desc: 'Despacho a todo Chile con seguimiento en tiempo real. Entregas coordinadas en obra.' },
+    { img: '/images/carousel_cotizacion_he_1780437750642.png', title: 'Cotización en 24h', desc: 'Respuesta formal con disponibilidad, plazos de entrega y condiciones comerciales en menos de un día hábil.' }
+  ];
 
   // Scroll listener para header
   useEffect(() => {
@@ -962,21 +970,76 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: '🏗️', title: 'Stock Permanente', desc: 'Más de 8,000 referencias disponibles en bodega. Despacho inmediato para sus urgencias de obra.' },
-              { icon: '🔬', title: 'Asesoría Técnica', desc: 'Equipo de ingenieros especializados en selección de materiales, dimensionamiento y normativas.' },
-              { icon: '🚛', title: 'Logística Nacional', desc: 'Despacho a todo Chile con seguimiento en tiempo real. Entregas coordinadas en obra.' },
-              { icon: '📋', title: 'Cotización en 24h', desc: 'Respuesta formal con disponibilidad, plazos de entrega y condiciones comerciales en menos de un día hábil.' }
-            ].map((item) => (
-              <div key={item.title} className="bg-white/70 hover:bg-white/95 border border-white/60 shadow-sm hover:border-amber-400/40 hover:shadow-xl hover:shadow-amber-500/10 p-6 rounded-2xl transition-all group backdrop-blur-md">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                  {item.icon}
+          {/* 3D Carousel Container */}
+          <div className="relative h-[450px] sm:h-[550px] w-full max-w-5xl mx-auto flex items-center justify-center" style={{ perspective: '1200px' }}>
+            {whyFeatures.map((item, i) => {
+              let offset = i - activeWhyCard;
+              const isActive = offset === 0;
+              
+              let transformStyle = { opacity: 0, transform: 'scale(0.75) translateY(2rem) translateZ(-200px)', zIndex: 0 };
+              let cursorStyle = 'pointer-events-none';
+              
+              if (isActive) {
+                transformStyle = { opacity: 1, transform: 'scale(1) translateX(0) translateZ(50px)', zIndex: 30, filter: 'blur(0px)' };
+                cursorStyle = 'cursor-default shadow-[0_30px_60px_rgba(0,0,0,0.5)]';
+              } else if (offset === -1) {
+                transformStyle = { opacity: 0.7, transform: 'scale(0.85) translateX(-45%) rotateY(15deg) translateZ(-50px)', zIndex: 20, filter: 'blur(2px)' };
+                cursorStyle = 'cursor-pointer hover:opacity-100 hover:filter-none';
+              } else if (offset === 1) {
+                transformStyle = { opacity: 0.7, transform: 'scale(0.85) translateX(45%) rotateY(-15deg) translateZ(-50px)', zIndex: 20, filter: 'blur(2px)' };
+                cursorStyle = 'cursor-pointer hover:opacity-100 hover:filter-none';
+              } else if (offset === -2) {
+                transformStyle = { opacity: 0.3, transform: 'scale(0.75) translateX(-80%) rotateY(25deg) translateZ(-150px)', zIndex: 10, filter: 'blur(4px)' };
+              } else if (offset === 2) {
+                transformStyle = { opacity: 0.3, transform: 'scale(0.75) translateX(80%) rotateY(-25deg) translateZ(-150px)', zIndex: 10, filter: 'blur(4px)' };
+              }
+
+              return (
+                <div 
+                  key={i}
+                  onClick={() => !isActive && setActiveWhyCard(i)}
+                  className={`absolute w-[280px] sm:w-[350px] h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] transform-gpu ${cursorStyle}`}
+                  style={{ ...transformStyle, transformStyle: 'preserve-3d' }}
+                >
+                  <img src={item.img} alt={item.title} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? 'opacity-80' : 'opacity-40'}`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                  <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
+                  
+                  <div className={`absolute bottom-0 left-0 right-0 p-8 transition-all duration-700 transform ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                    <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4 shadow-lg">Ventaja Competitiva</span>
+                    <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">{item.title}</h3>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-sm">{item.desc}</p>
+                  </div>
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+
+          {/* Carousel Controls */}
+          <div className="flex justify-center items-center gap-6 mt-12">
+            <button 
+              onClick={() => setActiveWhyCard(prev => Math.max(0, prev - 1))}
+              disabled={activeWhyCard === 0}
+              className="w-12 h-12 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center text-slate-400 hover:text-amber-500 hover:border-amber-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm cursor-pointer z-40"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <div className="flex gap-3">
+              {whyFeatures.map((_, i) => (
+                <button 
+                  key={i} 
+                  onClick={() => setActiveWhyCard(i)}
+                  className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${i === activeWhyCard ? 'w-8 bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
+                />
+              ))}
+            </div>
+            <button 
+              onClick={() => setActiveWhyCard(prev => Math.min(whyFeatures.length - 1, prev + 1))}
+              disabled={activeWhyCard === whyFeatures.length - 1}
+              className="w-12 h-12 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center text-slate-400 hover:text-amber-500 hover:border-amber-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm cursor-pointer z-40"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </button>
           </div>
         </div>
       </section>
