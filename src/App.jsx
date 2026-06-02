@@ -698,7 +698,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-500 selection:text-white overflow-x-hidden w-full">
       
       {/* ═══════════ NOTIFICACIONES ═══════════ */}
       {notification && (
@@ -959,7 +959,7 @@ export default function App() {
       {renderHomeBusinessLines()}
 
       {/* ═══════════ POR QUÉ KVAL ═══════════ */}
-      <section id="nosotros" className="py-20 relative border-y border-white/50" style={{ backgroundImage: 'url(/images/light_premium_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
+      <section id="nosotros" className="py-20 relative border-y border-white/50 overflow-hidden" style={{ backgroundImage: 'url(/images/light_premium_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-slate-50/90"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -998,16 +998,16 @@ export default function App() {
                 <div 
                   key={i}
                   onClick={() => !isActive && setActiveWhyCard(i)}
-                  className={`absolute w-[280px] sm:w-[350px] h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] transform-gpu ${cursorStyle}`}
+                  className={`absolute w-[260px] sm:w-[350px] h-[380px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] transform-gpu ${cursorStyle}`}
                   style={{ ...transformStyle, transformStyle: 'preserve-3d' }}
                 >
                   <img src={item.img} alt={item.title} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? 'opacity-80' : 'opacity-40'}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                   <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
                   
-                  <div className={`absolute bottom-0 left-0 right-0 p-8 transition-all duration-700 transform ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                    <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4 shadow-lg">Ventaja Competitiva</span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">{item.title}</h3>
+                  <div className={`absolute bottom-0 left-0 right-0 p-6 sm:p-8 transition-all duration-700 transform ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}>
+                    <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-2 sm:mb-4 shadow-lg">Ventaja Competitiva</span>
+                    <h3 className="text-xl sm:text-3xl font-black text-white mb-2 sm:mb-3 tracking-tight">{item.title}</h3>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-sm">{item.desc}</p>
                   </div>
                 </div>
