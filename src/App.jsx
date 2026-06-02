@@ -211,7 +211,17 @@ export default function App() {
       showNotification('Los campos con (*) son requeridos', 'error');
       return;
     }
-    showNotification(`¡Solicitud recibida! Ticket #${Math.floor(Math.random() * 90000) + 10000} — Un ejecutivo técnico le contactará en breve.`, 'success');
+
+    let wtext = `Hola, soy ${formState.nombre}`;
+    if (formState.empresa) wtext += ` de ${formState.empresa}`;
+    wtext += `.\nMi correo es ${formState.email} y mi teléfono ${formState.telefono}.\n`;
+    if (formState.obraDestino) wtext += `Proyecto: ${formState.obraDestino}\n`;
+    if (formState.mensaje) wtext += `\nMensaje:\n${formState.mensaje}`;
+
+    const text = encodeURIComponent(wtext);
+    window.open(`https://wa.me/56966006747?text=${text}`, '_blank');
+
+    showNotification(`Redirigiendo a WhatsApp...`, 'success');
     setFormState({ nombre: '', empresa: '', email: '', telefono: '', obraDestino: '', mensaje: '' });
   };
 
@@ -703,7 +713,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56967608125</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> Ventashye2@gmail.com</span>
           </div>
           <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
