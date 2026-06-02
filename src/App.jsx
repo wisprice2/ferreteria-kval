@@ -136,6 +136,7 @@ export default function App() {
   });
 
   const [notification, setNotification] = useState(null);
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
 
   // Scroll listener para header
   useEffect(() => {
@@ -215,9 +216,115 @@ export default function App() {
   };
 
   const handleWhatsApp = () => {
-    const text = encodeURIComponent("Hola KVAL, necesito cotizar materiales industriales para un proyecto. ¿Pueden asesorarme?");
-    window.open(`https://wa.me/56967608125?text=${text}`, '_blank');
+    const text = encodeURIComponent("Hola H&E, necesito cotizar materiales industriales para un proyecto. ¿Pueden asesorarme?");
+    window.open(`https://wa.me/56966006747?text=${text}`, '_blank');
   };
+
+  const renderAboutView = () => (
+    <div className="min-h-screen bg-slate-50 font-sans animate-[fadeIn_0.5s_ease-out]">
+      
+      {/* ═══════════ HERO MINIMALISTA ═══════════ */}
+      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-slate-50 overflow-hidden border-b border-slate-200">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-slate-100 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <button onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }} className="mb-12 mx-auto text-slate-400 font-bold text-[10px] uppercase tracking-[0.3em] flex items-center justify-center gap-2 hover:text-slate-600 transition-colors w-fit group">
+            <svg className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Volver al Inicio
+          </button>
+
+          <span className="inline-block py-1.5 px-4 rounded-full bg-slate-100 border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-sm">
+            Nuestra Esencia
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+            H & E Ferretería <br className="hidden md:block" />
+            <span className="text-slate-400 font-light tracking-normal">Soluciones Hidráulicas Ltda.</span>
+          </h1>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-light">
+            Suministro integral, especialización técnica y respaldo garantizado para los proyectos de mayor envergadura en la Zona Sur del país.
+          </p>
+        </div>
+      </div>
+
+      {/* ═══════════ DOS COLUMNAS (INFO & MÉTRICAS) ═══════════ */}
+      <section className="py-24 relative bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+            
+            {/* Lado Izquierdo: Copy */}
+            <div className="w-full lg:w-1/2 space-y-8">
+              <h2 className="text-3xl font-black text-slate-900 tracking-tight">Especialistas Duales</h2>
+              <div className="w-12 h-1 bg-amber-500"></div>
+              
+              <div className="space-y-6 text-slate-600 leading-relaxed font-light text-lg">
+                <p>
+                  En <strong className="font-bold text-slate-800">H & E</strong>, no nos limitamos a ser un proveedor tradicional. Operamos bajo un modelo dual que fusiona la distribución a gran escala de ferretería industrial con una profunda capacidad técnica en terreno.
+                </p>
+                <p>
+                  Nuestra <strong className="font-bold text-slate-800">División Comercial</strong> cuenta con un catálogo de más de 8,000 SKUs de las marcas más reconocidas a nivel mundial, garantizando el suministro oportuno de herramientas, fijaciones y equipos de protección personal en todo Chile.
+                </p>
+                <p>
+                  En paralelo, nuestra <strong className="font-bold text-slate-800">División de Obras</strong> dispone de un equipo técnico élite especializado en termofusión, electrofusión e instalación de geosintéticos (HDPE), capaz de enfrentar desafíos de alta complejidad en terreno.
+                </p>
+              </div>
+            </div>
+
+            {/* Lado Derecho: Métricas (Clean Grid) */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                
+                <div className="border-l border-slate-200 pl-6 space-y-2">
+                  <span className="text-5xl font-black text-slate-900">15+</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Años de Experiencia</p>
+                </div>
+                
+                <div className="border-l border-slate-200 pl-6 space-y-2">
+                  <span className="text-5xl font-black text-slate-900">8k+</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">SKUs en Stock</p>
+                </div>
+                
+                <div className="border-l border-slate-200 pl-6 space-y-2">
+                  <span className="text-5xl font-black text-slate-900">100%</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Cobertura Nacional</p>
+                </div>
+                
+                <div className="border-l border-slate-200 pl-6 space-y-2">
+                  <span className="text-5xl font-black text-slate-900">&lt;24h</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Tiempo de Respuesta</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ BLOQUE ALIANZA Y MARCAS ═══════════ */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-16">
+          
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-6">Alianza Estratégica</h3>
+            <p className="text-2xl sm:text-3xl font-light text-slate-800 leading-tight">
+              Somos el <strong className="font-black text-slate-900">Representante Exclusivo</strong> de Politrans en la Zona Sur del país.
+            </p>
+          </div>
+
+          <div className="pt-16 border-t border-slate-200">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10">Marcas con las que trabajamos</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+              {['BOSCH', 'DeWALT', 'LINCOLN', 'STANLEY', 'WAVIN', '3M', 'NORTON', 'TRUPER'].map(brand => (
+                <span key={brand} className="text-2xl font-black text-slate-900 tracking-tighter uppercase">{brand}</span>
+              ))}
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+    </div>
+  );
 
   const renderCatalogView = () => (
     <section id="productos" className="py-20 bg-slate-50 min-h-[80vh] relative">
@@ -317,18 +424,197 @@ export default function App() {
     </section>
   );
 
+  const renderInstallationView = () => (
+    <div className="min-h-screen bg-slate-50 font-sans animate-[fadeIn_0.5s_ease-out]">
+      
+      {/* ═══════════ HERO DEDICADO ═══════════ */}
+      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-slate-950 overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <img src="/images/d1_image20.png" alt="Hero Instalación HDPE" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-emerald-900/40 to-transparent opacity-60"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <button onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }} className="mb-10 text-amber-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:text-amber-400 transition-colors w-fit group bg-slate-950/50 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
+            <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Volver al Inicio
+          </button>
+
+          <span className="inline-block py-1.5 px-4 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[11px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+            División de Obras
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
+            Instalación en <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">HDPE</span><br className="hidden md:block" /> y Geosintéticos
+          </h1>
+          <p className="text-lg text-slate-300 max-w-2xl leading-relaxed border-l-4 border-emerald-500 pl-4 bg-slate-900/40 p-4 rounded-r-xl backdrop-blur-sm">
+            Contamos con un equipo técnico especializado en termofusión, electrofusión y tendido de geosintéticos para proyectos de gran envergadura.
+          </p>
+        </div>
+      </div>
+
+      {/* ═══════════ ALIANZA ESTRATÉGICA POLITRANS ═══════════ */}
+      <section className="py-24 relative bg-white overflow-hidden">
+        {/* Decoraciones de fondo */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-50 rounded-full blur-3xl -mr-96 -mt-96 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-50 rounded-full blur-3xl -ml-64 -mb-64 pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            
+            <div className="w-full lg:w-5/12 space-y-8">
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-amber-50 border border-amber-200 rounded-full w-fit shadow-sm">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-white text-xs">★</span>
+                <span className="text-amber-700 text-xs font-black uppercase tracking-widest">Alianza Estratégica</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
+                Representante Exclusivo de <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Politrans</span>
+              </h2>
+              
+              <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl -mr-10 -mt-10 transition-all group-hover:scale-150"></div>
+                <h4 className="text-amber-400 font-bold uppercase tracking-widest text-sm mb-2">En la Zona Sur</h4>
+                <p className="text-slate-300 leading-relaxed relative z-10">
+                  Suministro técnico e instalación garantizada de materiales geosintéticos de alta densidad. Trabajamos con tecnología de punta y estándares internacionales.
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-7/12">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-shadow">
+                <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-4">
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                  Nuestras Especialidades
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                </h3>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+                  {[
+                    'Geomembrana HDPE', 'Geotextil', 'GCL', 'Geomalla', 
+                    'Geocompuesto Drenante', 'Bentonita', 'Drenante', 
+                    'Geotextil Estabilización', 'Geotextil Separación', 
+                    'Geotextil Drenaje', 'Geotextil Control Erosión', 
+                    'Geonet', 'Pavimentación', 'Recapado', '¡Y más!'
+                  ].map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 cursor-default border
+                        ${item === '¡Y más!' 
+                          ? 'bg-amber-50 border-amber-200 hover:bg-amber-500 hover:border-amber-600 group' 
+                          : 'bg-slate-50 border-slate-100 hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-sm'
+                        }`}
+                    >
+                      <div className={`flex-shrink-0 w-2 h-2 rounded-full transition-colors
+                        ${item === '¡Y más!' 
+                          ? 'bg-amber-500 group-hover:bg-white' 
+                          : 'bg-emerald-500'
+                        }`}
+                      ></div>
+                      <span className={`text-xs sm:text-sm font-bold leading-tight transition-colors
+                        ${item === '¡Y más!' 
+                          ? 'text-amber-800 group-hover:text-white' 
+                          : 'text-slate-700'
+                        }`}
+                      >
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ GALERÍA DE PROYECTOS (MASONRY LAYOUT) ═══════════ */}
+      <section className="py-24 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/10 via-slate-900 to-slate-900 pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+            <div className="max-w-2xl">
+              <span className="text-emerald-500 text-[11px] font-black uppercase tracking-[0.2em] mb-3 flex items-center gap-3">
+                <span className="w-8 h-px bg-emerald-500"></span> Evidencia en Terreno
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight">Galería de Proyectos Reales</h2>
+              <p className="text-slate-400 mt-4 text-lg">Obras que respaldan nuestra experiencia técnica en proyectos de alta complejidad.</p>
+            </div>
+          </div>
+          
+          {/* Diseño Uniforme para la galería */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30].map((num) => (
+              <div 
+                key={num} 
+                onClick={() => setSelectedGalleryImage(num)}
+                className="group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3] border border-white/5 transform transition-all duration-500 hover:scale-105 hover:z-30 hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:border-emerald-500/50 cursor-zoom-in"
+              >
+                <img 
+                  src={`/images/d1_image${num}.${num === 27 || num === 28 ? 'jpeg' : 'png'}`} 
+                  alt={`Proyecto H&E ${num}`} 
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transform transition-transform duration-700 group-hover:scale-110" 
+                  loading="lazy"
+                />
+                
+                {/* Overlay oscuro sutil que desaparece al hacer hover */}
+                <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-transparent transition-colors duration-500"></div>
+                
+                {/* Icono Lupa Centrado Elegante */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="w-14 h-14 bg-emerald-500/90 backdrop-blur-sm rounded-full flex items-center justify-center scale-50 group-hover:scale-100 transform transition-transform duration-500 shadow-2xl border border-white/30">
+                    <svg className="w-6 h-6 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+      
+      {/* Modal / Lightbox de Galería */}
+      {selectedGalleryImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out"
+          onClick={() => setSelectedGalleryImage(null)}
+        >
+          <div className="relative max-w-5xl w-full h-full max-h-[90vh] flex items-center justify-center animate-[fadeIn_0.3s_ease-out]">
+            <button 
+              onClick={() => setSelectedGalleryImage(null)}
+              className="absolute top-0 right-0 z-10 p-2 text-white/50 hover:text-white transition-colors bg-slate-900/50 rounded-bl-xl hover:bg-slate-900"
+            >
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <img 
+              src={`/images/d1_image${selectedGalleryImage}.${selectedGalleryImage === 27 || selectedGalleryImage === 28 ? 'jpeg' : 'png'}`} 
+              alt="Proyecto Ampliado" 
+              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
+    </div>
+  );
+
   const renderHomeBusinessLines = () => (
     <section id="lineas-negocio" className="py-20 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">Divisiones KVAL</span>
+          <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">Divisiones H&E</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
             Nuestras Líneas de Negocio
           </h2>
           <p className="text-slate-500 text-sm mt-2">Soluciones integrales para la industria, construcción y mantención.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Card 1: Ferretería Industrial */}
           <div 
@@ -364,6 +650,26 @@ export default function App() {
               <p className="text-slate-300 text-sm mb-6 max-w-md">Elementos de protección personal, vestuario de agua y suministros de limpieza industrial.</p>
               <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
                 Explorar Categoría <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: División de Obras / HDPE */}
+          <div 
+            onClick={() => { setCurrentView('installation'); window.scrollTo(0,0); }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              {/* Uso de una de las imágenes de instalación como fondo (ej. la 20) */}
+              <img src="/images/d1_image20.png" alt="Instalación HDPE" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División de Obras</span>
+              <h3 className="text-3xl font-black text-white mb-2">Instalación HDPE</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Termofusión, electrofusión y tendido de geosintéticos para proyectos de envergadura.</p>
+              <div className="inline-flex items-center gap-2 text-emerald-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Ver Servicios <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </div>
             </div>
           </div>
@@ -412,9 +718,14 @@ export default function App() {
       <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white/98 shadow-lg shadow-slate-200/50 backdrop-blur-md' : 'bg-white border-b border-slate-200'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
-          <a href="#hero" className="hover:opacity-90 transition-opacity">
-            <KvalLogo />
-          </a>
+          {/* Logo en Encabezado */}
+          <div 
+            onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }}
+            className="flex flex-col cursor-pointer group"
+          >
+            <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tighter leading-none group-hover:text-amber-500 transition-colors">H&E</span>
+            <span className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">Soluciones Hidráulicas</span>
+          </div>
 
           <nav className="hidden xl:flex items-center gap-7 text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
             {[
@@ -431,6 +742,14 @@ export default function App() {
                   if (href === '#productos') {
                     e.preventDefault();
                     setCurrentView('catalog');
+                    window.scrollTo(0, 0);
+                  } else if (href === '#servicios') {
+                    e.preventDefault();
+                    setCurrentView('installation');
+                    window.scrollTo(0, 0);
+                  } else if (href === '#nosotros') {
+                    e.preventDefault();
+                    setCurrentView('about');
                     window.scrollTo(0, 0);
                   } else if (currentView !== 'home') {
                     e.preventDefault();
@@ -509,6 +828,14 @@ export default function App() {
                       e.preventDefault();
                       setCurrentView('catalog');
                       window.scrollTo(0, 0);
+                    } else if (href === '#servicios') {
+                      e.preventDefault();
+                      setCurrentView('installation');
+                      window.scrollTo(0, 0);
+                    } else if (href === '#nosotros') {
+                      e.preventDefault();
+                      setCurrentView('about');
+                      window.scrollTo(0, 0);
                     } else if (currentView !== 'home') {
                       e.preventDefault();
                       setCurrentView('home');
@@ -540,7 +867,21 @@ export default function App() {
         {/* Amber accent line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-start text-left">
+        {/* Logo superior destacado con fondo blanco interno */}
+        <div className="absolute inset-x-0 top-2 sm:top-4 lg:top-4 z-20 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-start">
+            <div className="relative pointer-events-auto h-32 sm:h-40 lg:h-52 aspect-[532/469] group">
+              {/* Fondo blanco circular ajustado milimétricamente usando el análisis de píxeles del logo */}
+              <div 
+                className="absolute bg-white rounded-[50%] z-0"
+                style={{ top: '46.6%', left: '51.2%', width: '54.7%', height: '55.2%', transform: 'translate(-50%, -50%)' }}
+              ></div>
+              <img src="/images/logo.png" alt="KVAL Logo Destacado" className="relative z-10 w-full h-full object-contain drop-shadow-2xl" />
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-start text-left mt-16 lg:mt-24">
           
           <div className="max-w-3xl space-y-8">
             <div className="text-amber-500 font-bold uppercase tracking-[0.2em] text-sm md:text-base">
@@ -598,75 +939,6 @@ export default function App() {
 
       {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
       {renderHomeBusinessLines()}
-
-      {/* ═══════════ SERVICIOS DE INSTALACIÓN ═══════════ */}
-      <section id="servicios" className="py-20 relative border-y border-white/50" style={{ backgroundImage: 'url(/images/light_industrial_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-white/90"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            
-            <div className="w-full lg:w-1/3 space-y-8">
-              <div>
-                <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">División de Obras</span>
-                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-1">Instalación en HDPE y Geosintéticos</h2>
-                <p className="text-slate-600 text-sm mt-4 leading-relaxed">
-                  Contamos con un equipo técnico especializado en termofusión, electrofusión y tendido de geosintéticos para proyectos de gran envergadura.
-                </p>
-              </div>
-
-              <div className="bg-white/60 rounded-2xl overflow-hidden border border-white/60 shadow-md flex items-center justify-center p-6 backdrop-blur-md">
-                <img src="/images/hdpe.png" alt="Instalación de HDPE" className="max-w-full h-auto max-h-64 object-contain hover:scale-105 transition-transform duration-500 drop-shadow-xl" />
-              </div>
-
-              <div className="bg-white/70 border border-white/60 shadow-sm rounded-2xl p-6 sm:p-8 backdrop-blur-md">
-                <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider mb-6 flex items-center gap-2">
-                  <span className="text-amber-500">⚡</span> Somos Especialistas en:
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-[11px] font-bold text-slate-600">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geomembrana HDPE</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geotextil</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>GCL</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geomalla</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geocompuesto Drenante</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Bentonita</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Drenante</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geotextil Estabilización</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geotextil Separación</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geotextil Drenaje</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geotextil control erosión</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Geonet</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Pavimentación</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Recapado</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Y más!</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="w-full lg:w-2/3">
-              <div className="mb-10 space-y-2">
-                <span className="text-amber-600 text-[10px] uppercase tracking-widest font-black flex items-center gap-2">
-                  <span className="w-8 h-[2px] bg-amber-500"></span>
-                  Galería de Proyectos Reales
-                </span>
-                <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Obras que Respaldan Nuestra Experiencia</h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-                {[19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30].map((num) => (
-                  <div key={num} className="aspect-square rounded-2xl overflow-hidden bg-white/50 border border-white/50 backdrop-blur-sm shadow-sm transition-transform duration-500 hover:scale-[1.8] hover:z-50 hover:shadow-2xl relative cursor-zoom-in">
-                    <img 
-                      src={`/images/d1_image${num}.${num === 27 || num === 28 ? 'jpeg' : 'png'}`} 
-                      alt="Servicio de instalación KVAL" 
-                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" 
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════ POR QUÉ KVAL ═══════════ */}
       <section id="nosotros" className="py-20 relative border-y border-white/50" style={{ backgroundImage: 'url(/images/light_premium_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
@@ -776,8 +1048,12 @@ export default function App() {
         </div>
       </section>
         </>
-      ) : (
+      ) : currentView === 'catalog' ? (
         renderCatalogView()
+      ) : currentView === 'about' ? (
+        renderAboutView()
+      ) : (
+        renderInstallationView()
       )}
 
       {/* ═══════════ FOOTER ═══════════ */}
@@ -785,7 +1061,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
           
           <div className="space-y-4">
-            <KvalLogo variant="footer" />
+            {/* Logo copiado exactamente del Hero (flotante en el video) */}
+            <div className="relative h-24 aspect-[532/469] group">
+              <div 
+                className="absolute bg-white rounded-[50%] z-0 shadow-sm"
+                style={{ top: '46.6%', left: '51.2%', width: '54.7%', height: '55.2%', transform: 'translate(-50%, -50%)' }}
+              ></div>
+              <img src="/images/logo.png" alt="KVAL Logo" className="relative z-10 w-full h-full object-contain" />
+            </div>
             <p className="text-xs leading-relaxed text-slate-500 mt-4">
               Ferretería industrial especializada en suministros técnicos para construcción, minería, energía y saneamiento en Chile.
             </p>
@@ -814,7 +1097,7 @@ export default function App() {
             <h3 className="text-[11px] font-black uppercase text-white tracking-widest mb-4">Contacto</h3>
             <div className="space-y-3 text-xs">
               <p className="flex items-start gap-2"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</p>
-              <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6760 8125</p>
+              <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6600 6747</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <span className="text-amber-400 font-bold">Ventashye2@gmail.com</span></p>
               <p className="flex items-start gap-2"><span className="text-amber-400">🕐</span> Lunes a Viernes: 08:00 — 18:00</p>
             </div>
@@ -822,7 +1105,7 @@ export default function App() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-12 border-t border-slate-800 text-center text-[10px] text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 KVAL Ferretería Industrial S.A. Todos los derechos reservados.</p>
+          <p>© 2026 H & E FERRETERIA SOLUCIONES HIDRAULICAS LTDA. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-slate-400">Términos y Condiciones</a>
             <span>•</span>
@@ -977,6 +1260,18 @@ export default function App() {
           </div>
         </div>
       )}
+
+
+      {/* ═══════════ BOTÓN WHATSAPP FLOTANTE ═══════════ */}
+      <button
+        onClick={handleWhatsApp}
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group flex items-center justify-center animate-[slideUp_0.5s_ease-out]"
+        aria-label="Contactar por WhatsApp"
+      >
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+      </button>
 
       {/* Custom animation keyframes */}
       <style>{`
