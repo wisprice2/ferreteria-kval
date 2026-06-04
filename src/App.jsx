@@ -442,36 +442,531 @@ export default function App() {
     </section>
   );
 
-  const renderInstallationView = () => (
-    <div className="min-h-screen bg-slate-50 font-sans animate-[fadeIn_0.5s_ease-out]">
-      
-      {/* ═══════════ HERO DEDICADO ═══════════ */}
-      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-40">
-          <img src="/images/d1_image20.png" alt="Hero Instalación HDPE" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-emerald-900/40 to-transparent opacity-60"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <button onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }} className="mb-10 text-amber-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:text-amber-400 transition-colors w-fit group bg-slate-950/50 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
-            <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Volver al Inicio
-          </button>
+  const renderInstallationView = () => null;
 
-          <span className="inline-block py-1.5 px-4 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[11px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-            División de Obras
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
-            Instalación en <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">HDPE</span><br className="hidden md:block" /> y Geosintéticos
-          </h1>
-          <p className="text-lg text-slate-300 max-w-2xl leading-relaxed border-l-4 border-emerald-500 pl-4 bg-slate-900/40 p-4 rounded-r-xl backdrop-blur-sm">
-            Contamos con un equipo técnico especializado en termofusión, electrofusión y tendido de geosintéticos para proyectos de gran envergadura.
-          </p>
+  const renderHomeBusinessLines = () => (
+    <section id="lineas-negocio" className="py-20 bg-slate-50 border-y border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">Divisiones H&E</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+            Nuestras Líneas de Negocio
+          </h2>
+          <p className="text-slate-500 text-sm mt-2">Soluciones integrales para la industria, construcción y mantención.</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Card 1: Ferretería Industrial */}
+          <div 
+            onClick={() => { setActiveCategory('Ferretería Industrial'); setCurrentView('catalog'); window.scrollTo(0,0); }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              <img src="/images/ferreteria_bg_hd.png" alt="Ferretería Industrial" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Comercial</span>
+              <h3 className="text-3xl font-black text-white mb-2">Ferretería Industrial</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Herramientas, equipos, soldadura, válvulas y fijaciones de alta resistencia para su obra.</p>
+              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Ver Catálogo <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Aseo y Protección */}
+          <div 
+            onClick={() => { setActiveCategory('Aseo y Protección'); setCurrentView('catalog'); window.scrollTo(0,0); }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              <img src="/images/aseo_bg_hd.png" alt="Aseo y Protección" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Industrial</span>
+              <h3 className="text-3xl font-black text-white mb-2">Aseo y Protección</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Elementos de protección personal, vestuario de agua y suministros de limpieza industrial.</p>
+              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Explorar Categoría <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: División de Obras / HDPE */}
+          <div 
+            onClick={() => {
+              document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              {/* Uso de una de las imágenes de instalación como fondo (ej. la 20) */}
+              <img src="/images/d1_image20.png" alt="Instalación HDPE" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División de Obras</span>
+              <h3 className="text-3xl font-black text-white mb-2">Instalación HDPE</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Termofusión, electrofusión y tendido de geosintéticos para proyectos de envergadura.</p>
+              <div className="inline-flex items-center gap-2 text-emerald-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Ver Servicios <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-500 selection:text-white overflow-x-hidden w-full">
+      
+      {/* ═══════════ NOTIFICACIONES ═══════════ */}
+      {notification && (
+        <div className={`fixed bottom-6 left-6 z-[60] max-w-sm p-4 rounded-xl shadow-2xl flex items-center gap-3 border animate-[slideUp_0.3s_ease-out] ${
+          notification.type === 'success' ? 'bg-white border-emerald-500 text-emerald-700' :
+          notification.type === 'info' ? 'bg-white border-sky-500 text-sky-700' :
+          'bg-white border-red-500 text-red-700'
+        }`}>
+          <div className="text-lg">
+            {notification.type === 'success' && '✅'}
+            {notification.type === 'info' && '💡'}
+            {notification.type === 'error' && '⚠️'}
+          </div>
+          <p className="text-xs font-bold leading-snug">{notification.message}</p>
+        </div>
+      )}
+
+      {/* ═══════════ BARRA SUPERIOR INFO ═══════════ */}
+      <div className="bg-slate-900 text-slate-400 text-[10px] py-2 hidden lg:block">
+        <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56967608125</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> Ventashye2@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
+            <span className="text-emerald-400">● Despacho a todo Chile</span>
+            <span className="text-slate-600">|</span>
+            <span>Lun - Vie: 08:00 a 18:00</span>
+          </div>
         </div>
       </div>
 
-      {/* ═══════════ ALIANZA ESTRATÉGICA POLITRANS ═══════════ */}
+      {/* ═══════════ ENCABEZADO ═══════════ */}
+      <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white/98 shadow-lg shadow-slate-200/50 backdrop-blur-md' : 'bg-white border-b border-slate-200'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          
+          {/* Logo en Encabezado */}
+          <div 
+            onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }}
+            className="flex flex-col cursor-pointer group"
+          >
+            <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tighter leading-none group-hover:text-amber-500 transition-colors">H&E</span>
+            <span className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">Soluciones Hidráulicas</span>
+          </div>
+
+          <nav className="hidden xl:flex items-center gap-7 text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
+            {[
+              ['#hero', 'Inicio'],
+              ['#productos', 'Catálogo'],
+              ['#servicios', 'Servicios'],
+              ['#nosotros', 'Nosotros'],
+              ['#contacto', 'Contacto']
+            ].map(([href, label]) => (
+              <a 
+                key={href} 
+                href={href} 
+                onClick={(e) => {
+                  if (href === '#productos') {
+                    e.preventDefault();
+                    setCurrentView('catalog');
+                    window.scrollTo(0, 0);
+                  } else if (href === '#servicios') {
+                    e.preventDefault();
+                    if (currentView !== 'home') {
+                      setCurrentView('home');
+                      setTimeout(() => {
+                        document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 200);
+                    } else {
+                      document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  } else if (href === '#nosotros') {
+                    e.preventDefault();
+                    setCurrentView('about');
+                    window.scrollTo(0, 0);
+                  } else if (currentView !== 'home') {
+                    e.preventDefault();
+                    setCurrentView('home');
+                    setTimeout(() => document.querySelector(href)?.scrollIntoView(), 100);
+                  }
+                }}
+                className="hover:text-amber-600 transition-colors relative group py-1"
+              >
+                {label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-300"></span>
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            {/* Buscador */}
+            <div className="relative hidden md:block">
+              <input
+                type="text"
+                placeholder="Buscar productos..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="bg-slate-100 border border-slate-200 text-slate-800 placeholder-slate-400 pl-9 pr-4 py-2.5 rounded-xl text-xs focus:outline-none focus:border-amber-500 focus:bg-white transition-all w-56 focus:w-72"
+              />
+              <svg className="absolute left-3 top-3 w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
+              </svg>
+            </div>
+
+            {/* Botón Cotización */}
+            <button
+              onClick={() => setIsQuoteOpen(true)}
+              className="relative bg-amber-500 hover:bg-amber-600 text-white p-2.5 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm shadow-amber-500/20"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              <span className="text-[11px] font-black uppercase tracking-wider hidden sm:inline">Cotizar</span>
+              {quoteList.length > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-bounce">
+                  {quoteList.length}
+                </span>
+              )}
+            </button>
+
+            {/* Menú móvil */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="xl:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 transition-all cursor-pointer"
+            >
+              <svg className="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Menú móvil desplegable */}
+        {mobileMenuOpen && (
+          <div className="xl:hidden bg-white border-t border-slate-200 shadow-lg">
+            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+              {[
+                ['#hero', 'Inicio'],
+                ['#productos', 'Catálogo'],
+                ['#servicios', 'Servicios'],
+                ['#nosotros', 'Nosotros'],
+                ['#contacto', 'Contacto']
+              ].map(([href, label]) => (
+                <a 
+                  key={href} 
+                  href={href} 
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (href === '#productos') {
+                      e.preventDefault();
+                      setCurrentView('catalog');
+                      window.scrollTo(0, 0);
+                    } else if (href === '#servicios') {
+                      e.preventDefault();
+                      if (currentView !== 'home') {
+                        setCurrentView('home');
+                        setTimeout(() => {
+                          document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 200);
+                      } else {
+                        document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else if (href === '#nosotros') {
+                      e.preventDefault();
+                      setCurrentView('about');
+                      window.scrollTo(0, 0);
+                    } else if (currentView !== 'home') {
+                      e.preventDefault();
+                      setCurrentView('home');
+                      setTimeout(() => document.querySelector(href)?.scrollIntoView(), 100);
+                    }
+                  }} 
+                  className="block py-3 px-4 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-amber-600 hover:bg-slate-50 rounded-lg transition-all"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+
+      {currentView === 'home' ? (
+        <>
+      {/* ═══════════ HERO ═══════════ */}
+      <section id="hero" className="relative bg-slate-950 pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        {/* Background layers */}
+        <div className="absolute inset-0 opacity-80">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/60 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-900 to-transparent"></div>
+        {/* Amber accent line */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500"></div>
+
+        {/* Logo superior destacado con fondo blanco interno */}
+        <div className="absolute inset-x-0 top-2 sm:top-4 lg:top-4 z-20 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-start">
+            <div className="relative pointer-events-auto h-32 sm:h-40 lg:h-52 aspect-[532/469] group">
+              {/* Fondo blanco circular ajustado milimétricamente usando el análisis de píxeles del logo */}
+              <div 
+                className="absolute bg-white rounded-[50%] z-0"
+                style={{ top: '46.6%', left: '51.2%', width: '54.7%', height: '55.2%', transform: 'translate(-50%, -50%)' }}
+              ></div>
+              <img src="/images/logo.png" alt="KVAL Logo Destacado" className="relative z-10 w-full h-full object-contain drop-shadow-2xl" />
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-start text-left mt-16 lg:mt-24">
+          
+          <div className="max-w-3xl space-y-8">
+            <div className="text-amber-500 font-bold uppercase tracking-[0.2em] text-sm md:text-base">
+              Ferretería Industrial
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-[5rem] font-black tracking-tighter text-white leading-[0.95]">
+              para Grandes Obras
+            </h1>
+
+            <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
+              Tuberías HDPE, válvulas, herramientas eléctricas, soldadura, seguridad industrial, fijaciones y más.<br/><br/>
+              Todo lo que su obra necesita con asesoría técnica especializada y despacho a todo Chile.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+              <a href="#productos" onClick={(e) => { e.preventDefault(); setCurrentView('catalog'); window.scrollTo(0,0); }} className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-6 py-3.5 rounded-md transition-all flex items-center gap-3 text-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                Ver Catálogo Completo
+              </a>
+              <a href="#contacto" onClick={(e) => { if (currentView !== 'home') { e.preventDefault(); setCurrentView('home'); setTimeout(() => document.querySelector('#contacto')?.scrollIntoView(), 100); } }} className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3.5 rounded-md transition-all flex items-center gap-3 text-sm backdrop-blur-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                Solicitar Cotización
+              </a>
+            </div>
+
+            {/* Métricas */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-10 border-t border-white/10 max-w-2xl">
+              {[
+                [{d: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'}, '15+', 'Años de\nExperiencia'],
+                [{d: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'}, '8,000+', 'SKUs\nen Stock'],
+                [{d: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'}, '24 hrs', 'Respuesta\nde Cotización'],
+                [{d: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z'}, '100%', 'Cobertura\nNacional']
+              ].map(([icon, value, label], i) => (
+                <div key={i} className="flex flex-col items-start text-left">
+                  <div className="text-amber-500 mb-2 border border-amber-500/30 rounded-full p-1.5">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={icon.d} /></svg>
+                  </div>
+                  <span className="block text-2xl font-black text-white">{value}</span>
+                  <span className="block text-[10px] text-slate-400 uppercase font-semibold whitespace-pre-line leading-tight mt-1">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Marcas (Trust Bar) */}
+            <div className="pt-6 flex flex-wrap items-center gap-6 sm:gap-8 opacity-70">
+              {['BOSCH', 'DeWALT', 'LINCOLN', 'STANLEY', 'WAVIN', '3M', 'NORTON', 'TRUPER'].map((brand) => (
+                <span key={brand} className="text-sm font-black tracking-widest text-white uppercase">{brand}</span>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ REPRESENTANTES DIRECTOS POLITRANS ═══════════ */}
+      <section id="politrans" className="relative py-20 lg:py-28 bg-white overflow-hidden border-b border-slate-200">
+        {/* Decoraciones de fondo */}
+        <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-amber-50/60 rounded-full blur-[120px] -mr-96 -mt-64 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-slate-50 rounded-full blur-[100px] -ml-72 -mb-72 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Header de la sección */}
+          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-50 border-2 border-amber-200 rounded-full shadow-md shadow-amber-100/50 mx-auto">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white text-sm shadow-lg shadow-amber-500/30">★</span>
+              <span className="text-amber-800 text-xs font-black uppercase tracking-[0.2em]">Representantes Directos</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight">
+              Distribuidor Oficial de{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600">Politrans</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
+              Somos el <strong className="font-bold text-slate-800">representante directo</strong> de Politrans, 
+              líderes en geosintéticos y soluciones de ingeniería. Suministro técnico garantizado con la más amplia gama de productos 
+              para obras de gran envergadura en todo Chile.
+            </p>
+          </div>
+
+          {/* Contenido principal: 2 columnas */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
+
+            {/* Columna izquierda: Card oscura premium */}
+            <div className="w-full lg:w-5/12 flex flex-col gap-6">
+              <div className="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden flex-grow">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl -ml-12 -mb-12 pointer-events-none"></div>
+
+                <div className="relative z-10 space-y-8">
+                  <div>
+                    <span className="inline-block px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-5">Alianza Exclusiva</span>
+                    <h3 className="text-2xl sm:text-3xl font-black leading-tight mb-3">
+                      Toda la Gama <span className="text-amber-400">Politrans</span> a su Alcance
+                    </h3>
+                    <p className="text-slate-400 leading-relaxed text-sm">
+                      Acceda a la línea completa de geosintéticos, geomembranas y materiales especializados directamente desde fábrica. 
+                      Sin intermediarios, con asesoría técnica personalizada y los mejores tiempos de entrega del mercado.
+                    </p>
+                  </div>
+
+                  {/* Métricas rápidas */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                      <span className="block text-3xl font-black text-amber-400">100%</span>
+                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">Original</span>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                      <span className="block text-3xl font-black text-amber-400">Directo</span>
+                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">De Fábrica</span>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <button
+                    onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa cotizar productos Politrans. ¿Pueden asesorarme?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-black px-6 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-3 group"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Cotizar Productos Politrans
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna derecha: Grid completo de productos Politrans */}
+            <div className="w-full lg:w-7/12">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.09)] transition-shadow">
+                <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-4">
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                  Gama Completa de Productos
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                </h3>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+                  {[
+                    { name: 'Geomembrana HDPE', icon: '🛡️' },
+                    { name: 'Geotextil', icon: '🧵' },
+                    { name: 'GCL', icon: '📐' },
+                    { name: 'Geomalla', icon: '🔲' },
+                    { name: 'Geocompuesto Drenante', icon: '💧' },
+                    { name: 'Bentonita', icon: '🧱' },
+                    { name: 'Drenante', icon: '🌊' },
+                    { name: 'Geotextil Estabilización', icon: '🏗️' },
+                    { name: 'Geotextil Separación', icon: '📏' },
+                    { name: 'Geotextil Drenaje', icon: '🔧' },
+                    { name: 'Geotextil Control Erosión', icon: '🌿' },
+                    { name: 'Geonet', icon: '🔗' },
+                    { name: 'Tubería HDPE', icon: '🔩' },
+                    { name: 'Fitting Termofusión', icon: '⚡' },
+                    { name: 'Fitting Electrofusión', icon: '🔌' },
+                    { name: 'Pavimentación', icon: '🛤️' },
+                    { name: 'Recapado', icon: '🏁' },
+                    { name: '¡Y más!', icon: '✨' }
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 cursor-default border
+                        ${item.name === '¡Y más!'
+                          ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 hover:from-amber-500 hover:to-orange-500 hover:border-amber-600 group col-span-2 sm:col-span-1'
+                          : 'bg-slate-50/80 border-slate-100 hover:bg-amber-50 hover:border-amber-200 hover:shadow-sm'
+                        }`}
+                    >
+                      <div className={`flex-shrink-0 w-2.5 h-2.5 rounded-full transition-colors
+                        ${item.name === '¡Y más!'
+                          ? 'bg-amber-500 group-hover:bg-white'
+                          : 'bg-amber-500'
+                        }`}
+                      ></div>
+                      <span className={`text-xs sm:text-sm font-bold leading-tight transition-colors
+                        ${item.name === '¡Y más!'
+                          ? 'text-amber-800 group-hover:text-white'
+                          : 'text-slate-700'
+                        }`}
+                      >
+                        {item.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Nota inferior */}
+                <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-4 justify-between">
+                  <p className="text-xs text-slate-400 text-center sm:text-left">
+                    <span className="font-bold text-slate-600">Asesoría técnica incluida</span> en la selección de materiales según requerimientos de su proyecto.
+                  </p>
+                  <button
+                    onClick={() => { document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    className="text-amber-600 text-xs font-black uppercase tracking-wider hover:text-amber-700 transition-colors flex items-center gap-2 flex-shrink-0 cursor-pointer group"
+                  >
+                    Ver Servicios
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
+      {renderHomeBusinessLines()}
+
+      {/* ═══════════ DIVISIÓN DE OBRAS: INSTALACIÓN EN HDPE Y GEOSINTÉTICOS ═══════════ */}
+      <div id="servicios">
+        <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 bg-slate-950 overflow-hidden">
+          <div className="absolute inset-0 opacity-40">
+            <img src="/images/d1_image20.png" alt="Hero Instalación HDPE" className="w-full h-full object-cover" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-emerald-900/40 to-transparent opacity-60"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[11px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              División de Obras
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
+              Instalación en <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">HDPE</span><br className="hidden md:block" /> y Geosintéticos
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed border-l-4 border-emerald-500 pl-4 bg-slate-900/40 p-4 rounded-r-xl backdrop-blur-sm">
+              Contamos con un equipo técnico especializado en termofusión, electrofusión y tendido de geosintéticos para proyectos de gran envergadura.
+            </p>
+          </div>
+        </section>
+
+        {/* ═══════════ ALIANZA ESTRATÉGICA POLITRANS ═══════════ */}
       <section className="py-24 relative bg-white overflow-hidden">
         {/* Decoraciones de fondo */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-50 rounded-full blur-3xl -mr-96 -mt-96 pointer-events-none"></div>
@@ -797,518 +1292,7 @@ export default function App() {
 
         </div>
       </section>
-      
-      {/* Modal / Lightbox de Galería */}
-      {selectedGalleryImage && (
-        <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out"
-          onClick={() => setSelectedGalleryImage(null)}
-        >
-          <div className="relative max-w-5xl w-full h-full max-h-[90vh] flex items-center justify-center animate-[fadeIn_0.3s_ease-out]">
-            <button 
-              onClick={() => setSelectedGalleryImage(null)}
-              className="absolute top-0 right-0 z-10 p-2 text-white/50 hover:text-white transition-colors bg-slate-900/50 rounded-bl-xl hover:bg-slate-900"
-            >
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            <img 
-              src={`/images/d1_image${selectedGalleryImage}.${selectedGalleryImage === 27 || selectedGalleryImage === 28 ? 'jpeg' : 'png'}`} 
-              alt="Proyecto Ampliado" 
-              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl cursor-default"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
-
-    </div>
-  );
-
-  const renderHomeBusinessLines = () => (
-    <section id="lineas-negocio" className="py-20 bg-slate-50 border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">Divisiones H&E</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-            Nuestras Líneas de Negocio
-          </h2>
-          <p className="text-slate-500 text-sm mt-2">Soluciones integrales para la industria, construcción y mantención.</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          {/* Card 1: Ferretería Industrial */}
-          <div 
-            onClick={() => { setActiveCategory('Ferretería Industrial'); setCurrentView('catalog'); window.scrollTo(0,0); }}
-            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
-          >
-            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
-              <img src="/images/ferreteria_bg_hd.png" alt="Ferretería Industrial" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-            <div className="relative z-10">
-              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Comercial</span>
-              <h3 className="text-3xl font-black text-white mb-2">Ferretería Industrial</h3>
-              <p className="text-slate-300 text-sm mb-6 max-w-md">Herramientas, equipos, soldadura, válvulas y fijaciones de alta resistencia para su obra.</p>
-              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
-                Ver Catálogo <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Aseo y Protección */}
-          <div 
-            onClick={() => { setActiveCategory('Aseo y Protección'); setCurrentView('catalog'); window.scrollTo(0,0); }}
-            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
-          >
-            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
-              <img src="/images/aseo_bg_hd.png" alt="Aseo y Protección" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-            <div className="relative z-10">
-              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Industrial</span>
-              <h3 className="text-3xl font-black text-white mb-2">Aseo y Protección</h3>
-              <p className="text-slate-300 text-sm mb-6 max-w-md">Elementos de protección personal, vestuario de agua y suministros de limpieza industrial.</p>
-              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
-                Explorar Categoría <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: División de Obras / HDPE */}
-          <div 
-            onClick={() => { setCurrentView('installation'); window.scrollTo(0,0); }}
-            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
-          >
-            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
-              {/* Uso de una de las imágenes de instalación como fondo (ej. la 20) */}
-              <img src="/images/d1_image20.png" alt="Instalación HDPE" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-            <div className="relative z-10">
-              <span className="inline-block px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División de Obras</span>
-              <h3 className="text-3xl font-black text-white mb-2">Instalación HDPE</h3>
-              <p className="text-slate-300 text-sm mb-6 max-w-md">Termofusión, electrofusión y tendido de geosintéticos para proyectos de envergadura.</p>
-              <div className="inline-flex items-center gap-2 text-emerald-400 font-bold text-sm group-hover:gap-4 transition-all">
-                Ver Servicios <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
-    </section>
-  );
-
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-500 selection:text-white overflow-x-hidden w-full">
-      
-      {/* ═══════════ NOTIFICACIONES ═══════════ */}
-      {notification && (
-        <div className={`fixed bottom-6 left-6 z-[60] max-w-sm p-4 rounded-xl shadow-2xl flex items-center gap-3 border animate-[slideUp_0.3s_ease-out] ${
-          notification.type === 'success' ? 'bg-white border-emerald-500 text-emerald-700' :
-          notification.type === 'info' ? 'bg-white border-sky-500 text-sky-700' :
-          'bg-white border-red-500 text-red-700'
-        }`}>
-          <div className="text-lg">
-            {notification.type === 'success' && '✅'}
-            {notification.type === 'info' && '💡'}
-            {notification.type === 'error' && '⚠️'}
-          </div>
-          <p className="text-xs font-bold leading-snug">{notification.message}</p>
-        </div>
-      )}
-
-      {/* ═══════════ BARRA SUPERIOR INFO ═══════════ */}
-      <div className="bg-slate-900 text-slate-400 text-[10px] py-2 hidden lg:block">
-        <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56967608125</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> Ventashye2@gmail.com</span>
-          </div>
-          <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
-            <span className="text-emerald-400">● Despacho a todo Chile</span>
-            <span className="text-slate-600">|</span>
-            <span>Lun - Vie: 08:00 a 18:00</span>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══════════ ENCABEZADO ═══════════ */}
-      <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white/98 shadow-lg shadow-slate-200/50 backdrop-blur-md' : 'bg-white border-b border-slate-200'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          
-          {/* Logo en Encabezado */}
-          <div 
-            onClick={() => { setCurrentView('home'); window.scrollTo(0,0); }}
-            className="flex flex-col cursor-pointer group"
-          >
-            <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tighter leading-none group-hover:text-amber-500 transition-colors">H&E</span>
-            <span className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">Soluciones Hidráulicas</span>
-          </div>
-
-          <nav className="hidden xl:flex items-center gap-7 text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
-            {[
-              ['#hero', 'Inicio'],
-              ['#productos', 'Catálogo'],
-              ['#servicios', 'Servicios'],
-              ['#nosotros', 'Nosotros'],
-              ['#contacto', 'Contacto']
-            ].map(([href, label]) => (
-              <a 
-                key={href} 
-                href={href} 
-                onClick={(e) => {
-                  if (href === '#productos') {
-                    e.preventDefault();
-                    setCurrentView('catalog');
-                    window.scrollTo(0, 0);
-                  } else if (href === '#servicios') {
-                    e.preventDefault();
-                    setCurrentView('installation');
-                    window.scrollTo(0, 0);
-                  } else if (href === '#nosotros') {
-                    e.preventDefault();
-                    setCurrentView('about');
-                    window.scrollTo(0, 0);
-                  } else if (currentView !== 'home') {
-                    e.preventDefault();
-                    setCurrentView('home');
-                    setTimeout(() => document.querySelector(href)?.scrollIntoView(), 100);
-                  }
-                }}
-                className="hover:text-amber-600 transition-colors relative group py-1"
-              >
-                {label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {/* Buscador */}
-            <div className="relative hidden md:block">
-              <input
-                type="text"
-                placeholder="Buscar productos..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-slate-100 border border-slate-200 text-slate-800 placeholder-slate-400 pl-9 pr-4 py-2.5 rounded-xl text-xs focus:outline-none focus:border-amber-500 focus:bg-white transition-all w-56 focus:w-72"
-              />
-              <svg className="absolute left-3 top-3 w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
-              </svg>
-            </div>
-
-            {/* Botón Cotización */}
-            <button
-              onClick={() => setIsQuoteOpen(true)}
-              className="relative bg-amber-500 hover:bg-amber-600 text-white p-2.5 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm shadow-amber-500/20"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              <span className="text-[11px] font-black uppercase tracking-wider hidden sm:inline">Cotizar</span>
-              {quoteList.length > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-bounce">
-                  {quoteList.length}
-                </span>
-              )}
-            </button>
-
-            {/* Menú móvil */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 transition-all cursor-pointer"
-            >
-              <svg className="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Menú móvil desplegable */}
-        {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-slate-200 shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              {[
-                ['#hero', 'Inicio'],
-                ['#productos', 'Catálogo'],
-                ['#servicios', 'Servicios'],
-                ['#nosotros', 'Nosotros'],
-                ['#contacto', 'Contacto']
-              ].map(([href, label]) => (
-                <a 
-                  key={href} 
-                  href={href} 
-                  onClick={(e) => {
-                    setMobileMenuOpen(false);
-                    if (href === '#productos') {
-                      e.preventDefault();
-                      setCurrentView('catalog');
-                      window.scrollTo(0, 0);
-                    } else if (href === '#servicios') {
-                      e.preventDefault();
-                      setCurrentView('installation');
-                      window.scrollTo(0, 0);
-                    } else if (href === '#nosotros') {
-                      e.preventDefault();
-                      setCurrentView('about');
-                      window.scrollTo(0, 0);
-                    } else if (currentView !== 'home') {
-                      e.preventDefault();
-                      setCurrentView('home');
-                      setTimeout(() => document.querySelector(href)?.scrollIntoView(), 100);
-                    }
-                  }} 
-                  className="block py-3 px-4 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-amber-600 hover:bg-slate-50 rounded-lg transition-all"
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </header>
-
-      {currentView === 'home' ? (
-        <>
-      {/* ═══════════ HERO ═══════════ */}
-      <section id="hero" className="relative bg-slate-950 pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
-        {/* Background layers */}
-        <div className="absolute inset-0 opacity-80">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/60 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-900 to-transparent"></div>
-        {/* Amber accent line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500"></div>
-
-        {/* Logo superior destacado con fondo blanco interno */}
-        <div className="absolute inset-x-0 top-2 sm:top-4 lg:top-4 z-20 pointer-events-none">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-start">
-            <div className="relative pointer-events-auto h-32 sm:h-40 lg:h-52 aspect-[532/469] group">
-              {/* Fondo blanco circular ajustado milimétricamente usando el análisis de píxeles del logo */}
-              <div 
-                className="absolute bg-white rounded-[50%] z-0"
-                style={{ top: '46.6%', left: '51.2%', width: '54.7%', height: '55.2%', transform: 'translate(-50%, -50%)' }}
-              ></div>
-              <img src="/images/logo.png" alt="KVAL Logo Destacado" className="relative z-10 w-full h-full object-contain drop-shadow-2xl" />
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-start text-left mt-16 lg:mt-24">
-          
-          <div className="max-w-3xl space-y-8">
-            <div className="text-amber-500 font-bold uppercase tracking-[0.2em] text-sm md:text-base">
-              Ferretería Industrial
-            </div>
-
-            <h1 className="text-5xl sm:text-6xl lg:text-[5rem] font-black tracking-tighter text-white leading-[0.95]">
-              para Grandes Obras
-            </h1>
-
-            <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
-              Tuberías HDPE, válvulas, herramientas eléctricas, soldadura, seguridad industrial, fijaciones y más.<br/><br/>
-              Todo lo que su obra necesita con asesoría técnica especializada y despacho a todo Chile.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-              <a href="#productos" onClick={(e) => { e.preventDefault(); setCurrentView('catalog'); window.scrollTo(0,0); }} className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-6 py-3.5 rounded-md transition-all flex items-center gap-3 text-sm">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                Ver Catálogo Completo
-              </a>
-              <a href="#contacto" onClick={(e) => { if (currentView !== 'home') { e.preventDefault(); setCurrentView('home'); setTimeout(() => document.querySelector('#contacto')?.scrollIntoView(), 100); } }} className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3.5 rounded-md transition-all flex items-center gap-3 text-sm backdrop-blur-sm">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                Solicitar Cotización
-              </a>
-            </div>
-
-            {/* Métricas */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-10 border-t border-white/10 max-w-2xl">
-              {[
-                [{d: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'}, '15+', 'Años de\nExperiencia'],
-                [{d: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'}, '8,000+', 'SKUs\nen Stock'],
-                [{d: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'}, '24 hrs', 'Respuesta\nde Cotización'],
-                [{d: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z'}, '100%', 'Cobertura\nNacional']
-              ].map(([icon, value, label], i) => (
-                <div key={i} className="flex flex-col items-start text-left">
-                  <div className="text-amber-500 mb-2 border border-amber-500/30 rounded-full p-1.5">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={icon.d} /></svg>
-                  </div>
-                  <span className="block text-2xl font-black text-white">{value}</span>
-                  <span className="block text-[10px] text-slate-400 uppercase font-semibold whitespace-pre-line leading-tight mt-1">{label}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Marcas (Trust Bar) */}
-            <div className="pt-6 flex flex-wrap items-center gap-6 sm:gap-8 opacity-70">
-              {['BOSCH', 'DeWALT', 'LINCOLN', 'STANLEY', 'WAVIN', '3M', 'NORTON', 'TRUPER'].map((brand) => (
-                <span key={brand} className="text-sm font-black tracking-widest text-white uppercase">{brand}</span>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ REPRESENTANTES DIRECTOS POLITRANS ═══════════ */}
-      <section id="politrans" className="relative py-20 lg:py-28 bg-white overflow-hidden border-b border-slate-200">
-        {/* Decoraciones de fondo */}
-        <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-amber-50/60 rounded-full blur-[120px] -mr-96 -mt-64 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-slate-50 rounded-full blur-[100px] -ml-72 -mb-72 pointer-events-none"></div>
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-          {/* Header de la sección */}
-          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-50 border-2 border-amber-200 rounded-full shadow-md shadow-amber-100/50 mx-auto">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white text-sm shadow-lg shadow-amber-500/30">★</span>
-              <span className="text-amber-800 text-xs font-black uppercase tracking-[0.2em]">Representantes Directos</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight">
-              Distribuidor Oficial de{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600">Politrans</span>
-            </h2>
-            <p className="text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
-              Somos el <strong className="font-bold text-slate-800">representante directo</strong> de Politrans, 
-              líderes en geosintéticos y soluciones de ingeniería. Suministro técnico garantizado con la más amplia gama de productos 
-              para obras de gran envergadura en todo Chile.
-            </p>
-          </div>
-
-          {/* Contenido principal: 2 columnas */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
-
-            {/* Columna izquierda: Card oscura premium */}
-            <div className="w-full lg:w-5/12 flex flex-col gap-6">
-              <div className="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden flex-grow">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl -ml-12 -mb-12 pointer-events-none"></div>
-
-                <div className="relative z-10 space-y-8">
-                  <div>
-                    <span className="inline-block px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-5">Alianza Exclusiva</span>
-                    <h3 className="text-2xl sm:text-3xl font-black leading-tight mb-3">
-                      Toda la Gama <span className="text-amber-400">Politrans</span> a su Alcance
-                    </h3>
-                    <p className="text-slate-400 leading-relaxed text-sm">
-                      Acceda a la línea completa de geosintéticos, geomembranas y materiales especializados directamente desde fábrica. 
-                      Sin intermediarios, con asesoría técnica personalizada y los mejores tiempos de entrega del mercado.
-                    </p>
-                  </div>
-
-                  {/* Métricas rápidas */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                      <span className="block text-3xl font-black text-amber-400">100%</span>
-                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">Original</span>
-                    </div>
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                      <span className="block text-3xl font-black text-amber-400">Directo</span>
-                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">De Fábrica</span>
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <button
-                    onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa cotizar productos Politrans. ¿Pueden asesorarme?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
-                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-black px-6 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-3 group"
-                  >
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    Cotizar Productos Politrans
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Columna derecha: Grid completo de productos Politrans */}
-            <div className="w-full lg:w-7/12">
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.09)] transition-shadow">
-                <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-4">
-                  <span className="h-px bg-slate-200 flex-1"></span>
-                  Gama Completa de Productos
-                  <span className="h-px bg-slate-200 flex-1"></span>
-                </h3>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
-                  {[
-                    { name: 'Geomembrana HDPE', icon: '🛡️' },
-                    { name: 'Geotextil', icon: '🧵' },
-                    { name: 'GCL', icon: '📐' },
-                    { name: 'Geomalla', icon: '🔲' },
-                    { name: 'Geocompuesto Drenante', icon: '💧' },
-                    { name: 'Bentonita', icon: '🧱' },
-                    { name: 'Drenante', icon: '🌊' },
-                    { name: 'Geotextil Estabilización', icon: '🏗️' },
-                    { name: 'Geotextil Separación', icon: '📏' },
-                    { name: 'Geotextil Drenaje', icon: '🔧' },
-                    { name: 'Geotextil Control Erosión', icon: '🌿' },
-                    { name: 'Geonet', icon: '🔗' },
-                    { name: 'Tubería HDPE', icon: '🔩' },
-                    { name: 'Fitting Termofusión', icon: '⚡' },
-                    { name: 'Fitting Electrofusión', icon: '🔌' },
-                    { name: 'Pavimentación', icon: '🛤️' },
-                    { name: 'Recapado', icon: '🏁' },
-                    { name: '¡Y más!', icon: '✨' }
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className={`flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 cursor-default border
-                        ${item.name === '¡Y más!'
-                          ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 hover:from-amber-500 hover:to-orange-500 hover:border-amber-600 group col-span-2 sm:col-span-1'
-                          : 'bg-slate-50/80 border-slate-100 hover:bg-amber-50 hover:border-amber-200 hover:shadow-sm'
-                        }`}
-                    >
-                      <div className={`flex-shrink-0 w-2.5 h-2.5 rounded-full transition-colors
-                        ${item.name === '¡Y más!'
-                          ? 'bg-amber-500 group-hover:bg-white'
-                          : 'bg-amber-500'
-                        }`}
-                      ></div>
-                      <span className={`text-xs sm:text-sm font-bold leading-tight transition-colors
-                        ${item.name === '¡Y más!'
-                          ? 'text-amber-800 group-hover:text-white'
-                          : 'text-slate-700'
-                        }`}
-                      >
-                        {item.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Nota inferior */}
-                <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                  <p className="text-xs text-slate-400 text-center sm:text-left">
-                    <span className="font-bold text-slate-600">Asesoría técnica incluida</span> en la selección de materiales según requerimientos de su proyecto.
-                  </p>
-                  <button
-                    onClick={() => { setCurrentView('installation'); window.scrollTo(0, 0); }}
-                    className="text-amber-600 text-xs font-black uppercase tracking-wider hover:text-amber-700 transition-colors flex items-center gap-2 flex-shrink-0 cursor-pointer group"
-                  >
-                    Ver Servicios
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
-      {renderHomeBusinessLines()}
 
       {/* ═══════════ POR QUÉ KVAL ═══════════ */}
       <section id="nosotros" className="py-20 relative border-y border-white/50 overflow-hidden" style={{ backgroundImage: 'url(/images/light_premium_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
@@ -1478,7 +1462,7 @@ export default function App() {
       ) : currentView === 'about' ? (
         renderAboutView()
       ) : (
-        renderInstallationView()
+        null
       )}
 
       {/* ═══════════ FOOTER ═══════════ */}
@@ -1637,6 +1621,29 @@ export default function App() {
       )}
 
       {/* ═══════════ MODAL FICHA DE PRODUCTO ═══════════ */}
+            {/* Modal / Lightbox de Galería */}
+      {selectedGalleryImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out"
+          onClick={() => setSelectedGalleryImage(null)}
+        >
+          <div className="relative max-w-5xl w-full h-full max-h-[90vh] flex items-center justify-center animate-[fadeIn_0.3s_ease-out]">
+            <button 
+              onClick={() => setSelectedGalleryImage(null)}
+              className="absolute top-0 right-0 z-10 p-2 text-white/50 hover:text-white transition-colors bg-slate-900/50 rounded-bl-xl hover:bg-slate-900"
+            >
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <img 
+              src={`/images/d1_image${selectedGalleryImage}.${selectedGalleryImage === 27 || selectedGalleryImage === 28 ? 'jpeg' : 'png'}`} 
+              alt="Proyecto Ampliado" 
+              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
       {selectedProduct && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" onClick={() => setSelectedProduct(null)}></div>
