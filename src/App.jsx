@@ -444,6 +444,62 @@ export default function App() {
 
   const renderInstallationView = () => null;
 
+  const renderHomeBusinessLines = () => (
+    <section id="lineas-negocio" className="py-20 bg-slate-50 border-y border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span className="text-amber-600 text-[11px] uppercase tracking-widest font-black">Divisiones H&E</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+            Nuestras Líneas de Negocio
+          </h2>
+          <p className="text-slate-500 text-sm mt-2">Soluciones integrales para la industria, construcción y mantención.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          {/* Card 1: Ferretería Industrial */}
+          <div 
+            onClick={() => { setActiveCategory('Ferretería Industrial'); setCurrentView('catalog'); window.scrollTo(0,0); }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              <img src="/images/ferreteria_bg_hd.png" alt="Ferretería Industrial" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Comercial</span>
+              <h3 className="text-3xl font-black text-white mb-2">Ferretería Industrial</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Herramientas, equipos, soldadura, válvulas y fijaciones de alta resistencia para su obra.</p>
+              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Ver Catálogo <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Aseo y Protección */}
+          <div 
+            onClick={() => { setActiveCategory('Aseo y Protección'); setCurrentView('catalog'); window.scrollTo(0,0); }}
+            className="group relative bg-slate-900 rounded-3xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all h-[400px] flex flex-col justify-end p-8"
+          >
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-700">
+              <img src="/images/aseo_bg_hd.png" alt="Aseo y Protección" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1 bg-amber-500 text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">División Industrial</span>
+              <h3 className="text-3xl font-black text-white mb-2">Aseo y Protección</h3>
+              <p className="text-slate-300 text-sm mb-6 max-w-md">Elementos de protección personal, vestuario de agua y suministros de limpieza industrial.</p>
+              <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm group-hover:gap-4 transition-all">
+                Explorar Categoría <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-500 selection:text-white overflow-x-hidden w-full">
       
@@ -863,6 +919,9 @@ export default function App() {
         </div>
       </section>
 
+
+      {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
+      {renderHomeBusinessLines()}
 
       {/* ═══════════ DIVISIÓN DE OBRAS: INSTALACIÓN EN HDPE Y GEOSINTÉTICOS ═══════════ */}
       <div id="servicios">
