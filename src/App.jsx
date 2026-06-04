@@ -920,8 +920,7 @@ export default function App() {
       </section>
 
 
-      {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
-      {renderHomeBusinessLines()}
+
 
       {/* ═══════════ DIVISIÓN DE OBRAS: INSTALACIÓN EN HDPE Y GEOSINTÉTICOS ═══════════ */}
       <div id="servicios">
@@ -945,84 +944,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* ═══════════ ALIANZA ESTRATÉGICA POLITRANS ═══════════ */}
-      <section className="py-24 relative bg-white overflow-hidden">
-        {/* Decoraciones de fondo */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-50 rounded-full blur-3xl -mr-96 -mt-96 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-50 rounded-full blur-3xl -ml-64 -mb-64 pointer-events-none"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            
-            <div className="w-full lg:w-5/12 space-y-8">
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-amber-50 border border-amber-200 rounded-full w-fit shadow-sm">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-white text-xs">★</span>
-                <span className="text-amber-700 text-xs font-black uppercase tracking-widest">Alianza Estratégica</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                Representante Exclusivo de <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Politrans</span>
-              </h2>
-              
-              <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl -mr-10 -mt-10 transition-all group-hover:scale-150"></div>
-                <h4 className="text-amber-400 font-bold uppercase tracking-widest text-sm mb-2">En la Zona Sur</h4>
-                <p className="text-slate-300 leading-relaxed relative z-10">
-                  Suministro técnico e instalación garantizada de materiales geosintéticos de alta densidad. Trabajamos con tecnología de punta y estándares internacionales.
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full lg:w-7/12">
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-shadow">
-                <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-4">
-                  <span className="h-px bg-slate-200 flex-1"></span>
-                  Nuestras Especialidades
-                  <span className="h-px bg-slate-200 flex-1"></span>
-                </h3>
-                
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
-                  {[
-                    'Geomembrana HDPE', 'Geotextil', 'GCL', 'Geomalla', 
-                    'Geocompuesto Drenante', 'Bentonita', 'Drenante', 
-                    'Geotextil Estabilización', 'Geotextil Separación', 
-                    'Geotextil Drenaje', 'Geotextil Control Erosión', 
-                    'Geonet', 'Pavimentación', 'Recapado', '¡Y más!'
-                  ].map((item, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 cursor-default border
-                        ${item === '¡Y más!' 
-                          ? 'bg-amber-50 border-amber-200 hover:bg-amber-500 hover:border-amber-600 group' 
-                          : 'bg-slate-50 border-slate-100 hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-sm'
-                        }`}
-                    >
-                      <div className={`flex-shrink-0 w-2 h-2 rounded-full transition-colors
-                        ${item === '¡Y más!' 
-                          ? 'bg-amber-500 group-hover:bg-white' 
-                          : 'bg-emerald-500'
-                        }`}
-                      ></div>
-                      <span className={`text-xs sm:text-sm font-bold leading-tight transition-colors
-                        ${item === '¡Y más!' 
-                          ? 'text-amber-800 group-hover:text-white' 
-                          : 'text-slate-700'
-                        }`}
-                      >
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ FABRICACIÓN DE BIOFILTROS ═══════════ */}
+        {/* ═══════════ FABRICACIÓN DE BIOFILTROS ═══════════ */}
       <section className="py-24 bg-slate-50 border-t border-slate-200 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-50 rounded-full blur-3xl -mr-64 -mt-64 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1373,6 +1295,9 @@ export default function App() {
           </a>
         </div>
       </section>
+
+      {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
+      {renderHomeBusinessLines()}
 
       {/* ═══════════ FORMULARIO CONTACTO ═══════════ */}
       <section id="contacto" className="py-20 relative" style={{ backgroundImage: 'url(/images/light_industrial_bg.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
