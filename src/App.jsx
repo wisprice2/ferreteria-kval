@@ -1159,6 +1159,154 @@ export default function App() {
         </div>
       </section>
 
+      {/* ═══════════ REPRESENTANTES DIRECTOS POLITRANS ═══════════ */}
+      <section id="politrans" className="relative py-20 lg:py-28 bg-white overflow-hidden border-b border-slate-200">
+        {/* Decoraciones de fondo */}
+        <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-amber-50/60 rounded-full blur-[120px] -mr-96 -mt-64 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-slate-50 rounded-full blur-[100px] -ml-72 -mb-72 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Header de la sección */}
+          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-50 border-2 border-amber-200 rounded-full shadow-md shadow-amber-100/50 mx-auto">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white text-sm shadow-lg shadow-amber-500/30">★</span>
+              <span className="text-amber-800 text-xs font-black uppercase tracking-[0.2em]">Representantes Directos</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight">
+              Distribuidor Oficial de{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600">Politrans</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
+              Somos el <strong className="font-bold text-slate-800">representante directo</strong> de Politrans, 
+              líderes en geosintéticos y soluciones de ingeniería. Suministro técnico garantizado con la más amplia gama de productos 
+              para obras de gran envergadura en todo Chile.
+            </p>
+          </div>
+
+          {/* Contenido principal: 2 columnas */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
+
+            {/* Columna izquierda: Card oscura premium */}
+            <div className="w-full lg:w-5/12 flex flex-col gap-6">
+              <div className="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden flex-grow">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl -ml-12 -mb-12 pointer-events-none"></div>
+
+                <div className="relative z-10 space-y-8">
+                  <div>
+                    <span className="inline-block px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-lg mb-5">Alianza Exclusiva</span>
+                    <h3 className="text-2xl sm:text-3xl font-black leading-tight mb-3">
+                      Toda la Gama <span className="text-amber-400">Politrans</span> a su Alcance
+                    </h3>
+                    <p className="text-slate-400 leading-relaxed text-sm">
+                      Acceda a la línea completa de geosintéticos, geomembranas y materiales especializados directamente desde fábrica. 
+                      Sin intermediarios, con asesoría técnica personalizada y los mejores tiempos de entrega del mercado.
+                    </p>
+                  </div>
+
+                  {/* Métricas rápidas */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                      <span className="block text-3xl font-black text-amber-400">100%</span>
+                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">Original</span>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                      <span className="block text-3xl font-black text-amber-400">Directo</span>
+                      <span className="block text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">De Fábrica</span>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <button
+                    onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa cotizar productos Politrans. ¿Pueden asesorarme?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-black px-6 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-3 group"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Cotizar Productos Politrans
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna derecha: Grid completo de productos Politrans */}
+            <div className="w-full lg:w-7/12">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.09)] transition-shadow">
+                <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-4">
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                  Gama Completa de Productos
+                  <span className="h-px bg-slate-200 flex-1"></span>
+                </h3>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+                  {[
+                    { name: 'Geomembrana HDPE', icon: '🛡️' },
+                    { name: 'Geotextil', icon: '🧵' },
+                    { name: 'GCL', icon: '📐' },
+                    { name: 'Geomalla', icon: '🔲' },
+                    { name: 'Geocompuesto Drenante', icon: '💧' },
+                    { name: 'Bentonita', icon: '🧱' },
+                    { name: 'Drenante', icon: '🌊' },
+                    { name: 'Geotextil Estabilización', icon: '🏗️' },
+                    { name: 'Geotextil Separación', icon: '📏' },
+                    { name: 'Geotextil Drenaje', icon: '🔧' },
+                    { name: 'Geotextil Control Erosión', icon: '🌿' },
+                    { name: 'Geonet', icon: '🔗' },
+                    { name: 'Tubería HDPE', icon: '🔩' },
+                    { name: 'Fitting Termofusión', icon: '⚡' },
+                    { name: 'Fitting Electrofusión', icon: '🔌' },
+                    { name: 'Pavimentación', icon: '🛤️' },
+                    { name: 'Recapado', icon: '🏁' },
+                    { name: '¡Y más!', icon: '✨' }
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 cursor-default border
+                        ${item.name === '¡Y más!'
+                          ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 hover:from-amber-500 hover:to-orange-500 hover:border-amber-600 group col-span-2 sm:col-span-1'
+                          : 'bg-slate-50/80 border-slate-100 hover:bg-amber-50 hover:border-amber-200 hover:shadow-sm'
+                        }`}
+                    >
+                      <div className={`flex-shrink-0 w-2.5 h-2.5 rounded-full transition-colors
+                        ${item.name === '¡Y más!'
+                          ? 'bg-amber-500 group-hover:bg-white'
+                          : 'bg-amber-500'
+                        }`}
+                      ></div>
+                      <span className={`text-xs sm:text-sm font-bold leading-tight transition-colors
+                        ${item.name === '¡Y más!'
+                          ? 'text-amber-800 group-hover:text-white'
+                          : 'text-slate-700'
+                        }`}
+                      >
+                        {item.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Nota inferior */}
+                <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-4 justify-between">
+                  <p className="text-xs text-slate-400 text-center sm:text-left">
+                    <span className="font-bold text-slate-600">Asesoría técnica incluida</span> en la selección de materiales según requerimientos de su proyecto.
+                  </p>
+                  <button
+                    onClick={() => { setCurrentView('installation'); window.scrollTo(0, 0); }}
+                    className="text-amber-600 text-xs font-black uppercase tracking-wider hover:text-amber-700 transition-colors flex items-center gap-2 flex-shrink-0 cursor-pointer group"
+                  >
+                    Ver Servicios
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ LÍNEAS DE NEGOCIO ═══════════ */}
       {renderHomeBusinessLines()}
 
