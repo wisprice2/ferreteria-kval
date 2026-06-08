@@ -526,7 +526,7 @@ export default function App() {
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56967608125</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> Ventashye2@gmail.com</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> ventashye2@gmail.com</span>
           </div>
           <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
             <span className="text-emerald-400">● Despacho a todo Chile</span>
@@ -723,7 +723,7 @@ export default function App() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-[5rem] font-black tracking-tighter text-white leading-[0.95]">
-              para Grandes Obras
+              Para Grandes Obras
             </h1>
 
             <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
@@ -1412,7 +1412,7 @@ export default function App() {
               <p className="flex items-start gap-2"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6600 6747</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6760 8125</p>
-              <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <span className="text-amber-400 font-bold">Ventashye2@gmail.com</span></p>
+              <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <span className="text-amber-400 font-bold">ventashye2@gmail.com</span></p>
               <p className="flex items-start gap-2"><span className="text-amber-400">🕐</span> Lunes a Viernes: 08:00 — 18:00</p>
             </div>
           </div>
