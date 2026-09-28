@@ -1,7 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import CorrugatedPipes from './CorrugatedPipes';
 
 // --- BASE DE DATOS DE PRODUCTOS - FERRETERÍA INDUSTRIAL KVAL ---
 const KVAL_PRODUCTS = [
+  {
+    id: 'tubos-corrugados', category: 'Ferretería Industrial', name: 'Tubos corrugados',
+    image: '/images/tubos-corrugados.png', tag: 'A la venta',
+    desc: ['Venta de tubos corrugados para tu proyecto.', 'Indícanos el diámetro y la cantidad que necesitas.', 'Consulta características, disponibilidad y valores con nuestro equipo.']
+  },
   // DOCUMENTO 1
   { id: 'd1-1', category: 'Ferretería Industrial', name: 'Fijaciones', image: '/images/d1_image2.jpeg' },
   { id: 'd1-2', category: 'Ferretería Industrial', name: 'Eslingas de izaje de carga', image: '/images/d1_image3.png' },
@@ -525,7 +531,6 @@ export default function App() {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56967608125</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> ventashye2@gmail.com</span>
           </div>
           <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
@@ -727,7 +732,7 @@ export default function App() {
             </h1>
 
             <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
-              Tuberías HDPE, válvulas, herramientas eléctricas, soldadura, seguridad industrial, fijaciones y más.<br/><br/>
+              Tubos corrugados, tuberías HDPE, válvulas, herramientas eléctricas, soldadura, seguridad industrial, fijaciones y más.<br/><br/>
               Todo lo que su obra necesita con asesoría técnica especializada y despacho a todo Chile.
             </p>
 
@@ -741,6 +746,10 @@ export default function App() {
                 Solicitar Cotización
               </a>
             </div>
+
+            <a href="#tubos-corrugados" className="inline-flex min-h-11 items-center gap-3 rounded-md text-sm font-bold text-amber-300 underline decoration-amber-300/40 underline-offset-4 hover:text-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300">
+              Ya a la venta: tubos corrugados <span aria-hidden="true">↓</span>
+            </a>
 
             {/* Métricas */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-10 border-t border-white/10 max-w-2xl">
@@ -770,6 +779,13 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <CorrugatedPipes onViewCatalog={() => {
+        setActiveCategory('Todos');
+        setSearchQuery('corrugados');
+        setCurrentView('catalog');
+        window.scrollTo(0, 0);
+      }} />
 
       {/* ═══════════ REPRESENTANTES DIRECTOS POLITRANS ═══════════ */}
       <section id="politrans" className="relative py-20 lg:py-28 bg-white overflow-hidden border-b border-slate-200">
@@ -980,7 +996,7 @@ export default function App() {
               {/* CTA Biofiltros */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa el servicio de Fabricación de Biofiltros. ¿Pueden enviarme más información y cotización?'); window.open(`https://wa.me/56967608125?text=${text}`, '_blank'); }}
+                  onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa el servicio de Fabricación de Biofiltros. ¿Pueden enviarme más información y cotización?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
                   className="bg-emerald-500 hover:bg-emerald-600 text-white font-black px-6 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-3 group"
                 >
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -1050,7 +1066,7 @@ export default function App() {
               {/* CTA Geo Tubos */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa el servicio de Instalación de Geo Tubos. ¿Pueden enviarme más información y cotización?'); window.open(`https://wa.me/56967608125?text=${text}`, '_blank'); }}
+                  onClick={() => { const text = encodeURIComponent('Hola H&E, me interesa el servicio de Instalación de Geo Tubos. ¿Pueden enviarme más información y cotización?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
                   className="bg-cyan-500 hover:bg-cyan-600 text-white font-black px-6 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/20 cursor-pointer flex items-center justify-center gap-3 group"
                 >
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -1129,7 +1145,7 @@ export default function App() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <button
-              onClick={() => { const text = encodeURIComponent('Hola H&E, necesito asesoría técnica para un proyecto en HDPE. ¿Pueden contactarme?'); window.open(`https://wa.me/56967608125?text=${text}`, '_blank'); }}
+              onClick={() => { const text = encodeURIComponent('Hola H&E, necesito asesoría técnica para un proyecto en HDPE. ¿Pueden contactarme?'); window.open(`https://wa.me/56966006747?text=${text}`, '_blank'); }}
               className="bg-white hover:bg-slate-50 text-emerald-700 font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-2xl cursor-pointer flex items-center justify-center gap-3 group"
             >
               <svg className="w-5 h-5 fill-emerald-600" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -1137,7 +1153,7 @@ export default function App() {
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </button>
             <a
-              href="tel:+56967608125"
+              href="tel:+56966006747"
               className="bg-emerald-800/50 hover:bg-emerald-800 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-3 backdrop-blur-sm"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -1411,7 +1427,6 @@ export default function App() {
             <div className="space-y-3 text-xs">
               <p className="flex items-start gap-2"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6600 6747</p>
-              <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6760 8125</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <span className="text-amber-400 font-bold">ventashye2@gmail.com</span></p>
               <p className="flex items-start gap-2"><span className="text-amber-400">🕐</span> Lunes a Viernes: 08:00 — 18:00</p>
             </div>
@@ -1505,13 +1520,19 @@ export default function App() {
 
                   <a 
                     href="#contacto"
-                    onClick={() => {
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setCurrentView('home');
                       setIsQuoteOpen(false);
                       setFormState(prev => ({
                         ...prev,
                         mensaje: `Solicito cotización para los siguientes productos:\n\n` + 
                           quoteList.map(i => `• ${i.name} — Cantidad: ${i.qty}`).join('\n')
                       }));
+                      requestAnimationFrame(() => {
+                        document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                        document.querySelector('#contacto input')?.focus({ preventScroll: true });
+                      });
                     }}
                     className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-black py-4 rounded-xl text-xs uppercase tracking-wider text-center block transition-all shadow-sm"
                   >
