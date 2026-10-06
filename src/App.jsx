@@ -531,7 +531,7 @@ export default function App() {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</span>
             <span className="flex items-center gap-1.5"><span className="text-amber-400">📞</span> +56966006747</span>
-            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> ventashye2@gmail.com</span>
+            <span className="flex items-center gap-1.5"><span className="text-amber-400">✉️</span> <a href="mailto:ferreteriahye1@gmail.com" className="hover:underline">ferreteriahye1@gmail.com</a></span>
           </div>
           <div className="flex items-center gap-4 font-bold uppercase tracking-wider">
             <span className="text-emerald-400">● Despacho a todo Chile</span>
@@ -1427,7 +1427,7 @@ export default function App() {
             <div className="space-y-3 text-xs">
               <p className="flex items-start gap-2"><span className="text-amber-400">📍</span> AV. GRAN BRETAÑA 4357 HUALPEN</p>
               <p className="flex items-start gap-2"><span className="text-amber-400">📞</span> +56 9 6600 6747</p>
-              <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <span className="text-amber-400 font-bold">ventashye2@gmail.com</span></p>
+              <p className="flex items-start gap-2"><span className="text-amber-400">✉️</span> <a href="mailto:ferreteriahye1@gmail.com" className="text-amber-400 font-bold hover:underline">ferreteriahye1@gmail.com</a></p>
               <p className="flex items-start gap-2"><span className="text-amber-400">🕐</span> Lunes a Viernes: 08:00 — 18:00</p>
             </div>
           </div>
